@@ -21,5 +21,10 @@ outputs:
       - ./output_bin/bin/hw.exe
       - ./output_bin/bin/zlib.dll
 
+test:
+  files:
+    hw.exe
+    zlib.dll
+
 about:
   home:
