@@ -1,0 +1,25 @@
+package:
+  name: hw-app
+  version: 1.0
+
+source:
+  path: ..
+  #git_url: https://github.com/sushinskiy/hw.git
+  
+build:
+  script: build.bat
+
+requirements:
+  build:
+    - cmake
+  host:
+    - zlib
+
+outputs:
+  - name: hw-package
+    files:
+      - ./output_bin/bin/hw.exe
+      - ./output_bin/bin/zlib.dll
+
+about:
+  home:
