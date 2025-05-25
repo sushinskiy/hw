@@ -1,12 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 project(hw)
 
-message(---${CMAKE_PREFIX_PATH})
-
 find_package(ZLIB REQUIRED)
 
-add_executable(hw main.cpp
-    build.sh)
+add_executable(hw main.cpp)
+
 target_link_libraries(hw ZLIB::ZLIB)
 
 install(TARGETS hw
@@ -15,8 +13,6 @@ install(TARGETS hw
 if (WIN32)
     set(ZLIB_DYNAMIC_LIB_PATHS ${ZLIB_LIBRARIES}/../../bin/zlib.dll)
 else(WIN32)
-    message(=== ${ZLIB_LIBRARIES})
-
     set(RUNTIME_SO_PATH ${ZLIB_LIBRARIES}.1)            # -> libz.so.1
     if (NOT EXISTS ${RUNTIME_SO_PATH})                  #for a while only 1.* version is supported
         error(${RUNTIME_SO_PATH} "doesn't exist")
