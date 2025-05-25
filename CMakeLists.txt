@@ -12,19 +12,10 @@ target_link_libraries(hw ZLIB::ZLIB)
 install(TARGETS hw
         RUNTIME DESTINATION bin)
 
-
-if(NOT DEFINED DLIB_EXT)
-    set(DLIB_EXT ".dll")
-endif(NOT DEFINED DLIB_EXT)
-
 if (WIN32)
-    set(ZLIB_DYNAMIC_LIB_PATHS ${ZLIB_LIBRARIES}/../../lib/zlib${DLIB_EXT})
+    set(ZLIB_DYNAMIC_LIB_PATHS ${ZLIB_LIBRARIES}/../../bin/zlib.dll)
 else(WIN32)
-    #cmake_path(GET  PARENT_PATH LIB_FOLDER)
-
     message(=== ${ZLIB_LIBRARIES})
-
-    #file(GLOB
 
     set(RUNTIME_SO_PATH ${ZLIB_LIBRARIES}.1)            # -> libz.so.1
     if (NOT EXISTS ${RUNTIME_SO_PATH})                  #for a while only 1.* version is supported

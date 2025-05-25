@@ -1,6 +1,9 @@
 package:
   name: hw-app
   version: 1.1
+  
+numpy:
+  - ''
 
 source:
   path: ..
@@ -29,8 +32,8 @@ outputs:
       - "./output_bin/bin/libz.*"   					# [ linux ]
     test:
       commands:
-        - if not exist "$PREFIX/output_bin/bin/hw.exe" exit 1   	# [ win ]
-        - if not exist "$PREFIX/output_bin/bin/zlib.dll"  exit 1 	# [ win ]
+        - if not exist "%PREFIX%/output_bin/bin/hw.exe" exit 1   	# [ win ]
+        - if not exist "%PREFIX%/output_bin/bin/zlib.dll"  exit 1 	# [ win ]
         - test -x "$PREFIX/output_bin/bin/hw"				# [ linux ]
 
 about:
