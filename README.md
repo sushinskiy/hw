@@ -39,3 +39,14 @@ The built package is available on Anaconda.org.
 To install it, simply run:
    ```bash
    conda install -c rsushysnkyi hw-package
+   ```
+---
+## 🚀 Running the Application
+   ```bash
+   cd ~/anaconda3/pkgs/hw-package-1.1-0/output_bin/bin
+   ./hw
+   ```
+It will print something like:
+   ```bash
+   zlib version: 1.2.13
+   ```
