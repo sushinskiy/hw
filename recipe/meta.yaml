@@ -9,7 +9,7 @@ build:
   script: build.bat                 # [ win and x86_64 ]
   script: bash build.sh             # [ linux ]
   rpaths:
-    - ./output_bin/bin/
+    - "./output_bin/bin/"
   missing_dso_whitelist:
     - "*/libc.so.6"                 # expected on
     - "*/libstdc++.so.6"            # the target system
@@ -23,15 +23,16 @@ requirements:
 outputs:
   - name: hw-package
     files:
-      - ./output_bin/bin/hw.exe     # [ win ]
-      - ./output_bin/bin/zlib.dll   # [ win ]
-      - ./output_bin/bin/hw         # [ linux ]
-      - ./output_bin/bin/libz.*     # [ linux ]
+      - "./output_bin/bin/hw.exe"   # [ win ]
+      - "./output_bin/bin/zlib.dll" # [ win ]
+      - "./output_bin/bin/hw"       # [ linux ]
+      - "./output_bin/bin/libz.*"   # [ linux ]
 
 test:
   files:
-    hw.exe
-    zlib.dll
+    - "hw.exe"                      # [ win ]
+    - "zlib.dll"                    # [ win ]
+    - "./output_bin/bin/hw"                          # [ linux ]
 
 about:
   home: https://github.com/sushinskiy/hw
